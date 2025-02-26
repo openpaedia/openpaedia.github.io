@@ -1,0 +1,12 @@
+{
+   "Main_Page": {
+       "title": "The Open Encyclopedia",
+       "file": "articles/Main_Page.html",
+       "snippet": "The Open Encyclopedia is a free online encyclopedia for public use."
+   },
+     "The arts": {
+       "title": "The arts",
+       "file": "articles/The_arts.html",
+       "snippet": "The creative arts encompass an extraordinary range of human practices that express ideas, emotions, and cultural values..."
+   }
+}
