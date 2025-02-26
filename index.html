@@ -211,7 +211,7 @@
     let wikiIndex = {};
 
     // Load the article index from an external JSON file
-    fetch('articles.json')
+    fetch('articles/articles.json')
       .then(response => response.json())
       .then(data => {
         wikiIndex = data;
