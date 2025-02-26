@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List of Articles - The Open Encyclopedia</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="sidebar">
+    <!-- Since this file is in the articles folder, adjust sidebar links accordingly -->
+    <a href="Main_Page.html" class="wiki-logo">The Open Encyclopedia</a>
+    <div class="sidebar-nav">
+      <a href="Main_Page.html">Main Page</a>
+      <a href="articles/Article_List.html">List of Articles</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="search-container">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search The Open Encyclopedia...">
+      <button class="search-button" onclick="searchWiki()">Search</button>
+    </div>
+    <div id="content">
+      <div class="article">
+        <h1 class="article-title">List of Articles</h1>
+        <div class="article-content">
+<li><a href"The_arts.html">The arts</a></li>
+<li><a href"Earth.html">Earth</a></li>
+</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      
+    // Optional search function: Redirects to index.html with a query (if implemented)
+    function searchWiki() {
+      const searchInput = document.getElementById('searchInput');
+      const searchTerm = searchInput.value.toLowerCase();
+      if (searchTerm.trim() === '') return;
+      // For a more robust search, you might implement AJAX or load a JSON index.
+      // For now, redirecting to the main page with a query parameter as an example:
+      window.location.href = "../index.html?search=" + encodeURIComponent(searchTerm);
+    }
+    
+    // Enable search on pressing the Enter key.
+    document.getElementById('searchInput').addEventListener('keyup', function(event) {
+      if (event.key === 'Enter') {
+        searchWiki();
+      }
+    });
+  </script>
+</body>
+</html>
