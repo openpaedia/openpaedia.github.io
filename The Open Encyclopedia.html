@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimpleWiki</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      display: flex;
+      min-height: 100vh;
+      background-color: #f6f6f6;
+    }
+    /* Sidebar */
+    .sidebar {
+      width: 240px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+    }
+    .wiki-logo {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #333;
+      text-decoration: none;
+      display: block;
+    }
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .sidebar-nav a {
+      color: #3366cc;
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 3px;
+    }
+    .sidebar-nav a:hover {
+      background-color: #e6e6e6;
+    }
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      padding: 20px;
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    .search-container {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    .search-input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 3px 0 0 3px;
+      outline: none;
+    }
+    .search-button {
+      padding: 10px 15px;
+      background-color: #3366cc;
+      color: white;
+      border: none;
+      border-radius: 0 3px 3px 0;
+      cursor: pointer;
+    }
+    .search-button:hover {
+      background-color: #254e99;
+    }
+    .article {
+      background-color: white;
+      padding: 20px;
+      border-radius: 3px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    .article-title {
+      font-size: 28px;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .article-content {
+      line-height: 1.6;
+      color: #333;
+    }
+    .article-content p {
+      margin-bottom: 15px;
+    }
+    .article-content h2 {
+      margin: 25px 0 15px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #eee;
+    }
+    .article-content h3 {
+      margin: 20px 0 10px;
+    }
+    .article-content a {
+      color: #3366cc;
+      text-decoration: none;
+    }
+    .article-content a:hover {
+      text-decoration: underline;
+    }
+    .article-content ul, .article-content ol {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+    .article-content li {
+      margin-bottom: 5px;
+    }
+    .search-results {
+      background-color: white;
+      padding: 20px;
+      border-radius: 3px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .search-results h2 {
+      margin-bottom: 15px;
+    }
+    .result-item {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    .result-item:last-child {
+      border-bottom: none;
+    }
+    .result-title {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    .result-title a {
+      color: #3366cc;
+      text-decoration: none;
+    }
+    .result-title a:hover {
+      text-decoration: underline;
+    }
+    .result-snippet {
+      font-size: 14px;
+      color: #555;
+    }
+    @media (max-width: 768px) {
+      body { flex-direction: column; }
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <!-- Sidebar now links directly to separate article files -->
+    <a href="articles/Main_Page.html" class="wiki-logo">The Open Encyclopedia</a>
+    <div class="sidebar-nav">
+      <a href="articles/Main_Page.html">Main Page</a>
+      <a href="articles/Article_List.html">List of Articles</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="search-container">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search The Open Encyclopedia...">
+      <button class="search-button" onclick="searchWiki()">Search</button>
+    </div>
+    <div id="content">
+      <p><h1>Welcome to The Open Encyclopedia!</h1>
+        <br>
+        We’re delighted to have you join our community—a space where free, reliable, and comprehensive information is at everyone’s fingertips. The Open Encyclopedia is a free online resource dedicated to delivering fact-based articles on an expansive range of subjects, from ancient history and cultural traditions to the latest innovations in science and technology.
+        <br> <br>
+        <h2>Our Mission & Values</h2>
+	<br>
+        Open Access for All: Every article, image, and educational resource on our platform is available at no cost. Our commitment to free access means that anyone, anywhere, can explore knowledge without barriers.
+	<br><br>
+        Extensive Coverage: We span a vast array of topics—including history, science, arts, culture, technology, and more—ensuring that no area of knowledge is left unexplored. Our articles are enriched with detailed explanations, multimedia elements, and up-to-date research findings.
+        <br><br>
+        <h2>Key Facts About The Open Encyclopedia:</h2>
+	<br>
+        Free Access: There are no subscription fees or hidden costs—knowledge should be free.
+	<br><br>
+        Diverse Content: Our growing database includes thousands of articles covering everything from ancient civilizations to modern-day scientific breakthroughs.
+	<br><br>
+        Innovative Features: Enjoy interactive elements and a user-friendly interface designed to make your learning journey both engaging and informative.
+	<br><br>
+        Thank you for visiting The Open Encyclopedia. Whether you’re here to learn, explore, or contribute, your curiosity and participation help us build a richer, more informed global community. Explore our articles, share your insights, and join us in our mission to democratize knowledge for everyone.
+        <br><br>
+        Welcome aboard!</p><!-- If desired, you can load a default article here using AJAX -->
+    </div>
+  </div>
+
+  <script>
+    /* 
+      In this implementation:
+      • The article index is stored in an external file (articles.json). 
+      • Each entry in the JSON includes the article's title, a file path (e.g., "articles/HTML.html"), and a snippet for search.
+      • The searchWiki() function loads and searches through this external index.
+      • Search results are rendered as normal anchor links, so clicking a result navigates to that article's separate file.
+    */
+    
+    let wikiIndex = {};
+
+    // Load the article index from an external JSON file
+    fetch('articles.json')
+      .then(response => response.json())
+      .then(data => {
+        wikiIndex = data;
+        // Optionally, load a default article into the content area via AJAX if desired.
+        // For example, uncomment the following line to load the Main Page into the current page:
+        // loadArticle('Main_Page');
+      })
+      .catch(err => {
+        console.error('Error loading article index:', err);
+      });
+
+    // Example loadArticle function using AJAX to load an article file into the content area.
+    // You might use this for sidebar navigation while keeping search results as direct links.
+    function loadArticle(articleId) {
+      if (wikiIndex[articleId]) {
+        const articleInfo = wikiIndex[articleId];
+        fetch(articleInfo.file)
+          .then(response => response.text())
+          .then(content => {
+            document.getElementById('content').innerHTML = content;
+            document.title = articleInfo.title + ' - SimpleWiki';
+          })
+          .catch(err => {
+            console.error('Error loading article:', err);
+          });
+      } else {
+        document.getElementById('content').innerHTML = `
+          <div class="article">
+            <h1 class="article-title">Article Not Found</h1>
+            <div class="article-content">
+              <p>The article "${articleId}" does not exist. You can return to the <a href="articles/Main_Page.html">Main Page</a> or check the <a href="articles/Help.html">Help</a> section.</p>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // Modified search function
+    function searchWiki() {
+      const searchInput = document.getElementById('searchInput');
+      const searchTerm = searchInput.value.toLowerCase();
+      const contentDiv = document.getElementById('content');
+      
+      if (searchTerm.trim() === '') {
+        // Optionally, you can load a default article here if the search is empty.
+        // For example: loadArticle('Main_Page');
+        contentDiv.innerHTML = '';
+        return;
+      }
+      
+      const results = [];
+      
+      // Search through the external wikiIndex
+      for (const articleId in wikiIndex) {
+        // Skip any special keys if needed (e.g., Random_Article if not searchable)
+        if (articleId !== 'Random_Article') {
+          const article = wikiIndex[articleId];
+          // Search in both the title and the snippet
+          if (article.title.toLowerCase().includes(searchTerm) ||
+              article.snippet.toLowerCase().includes(searchTerm)) {
+            results.push({
+              id: articleId,
+              title: article.title,
+              snippet: article.snippet
+            });
+          }
+        }
+      }
+      
+      // Build the HTML for search results with links to separate article files
+      if (results.length > 0) {
+        let resultsHTML = `
+          <div class="search-results">
+            <h2>Search Results for "${searchTerm}"</h2>
+        `;
+        results.forEach(result => {
+          resultsHTML += `
+            <div class="result-item">
+              <div class="result-title">
+                <a href="${wikiIndex[result.id].file}">${result.title}</a>
+              </div>
+              <div class="result-snippet">${result.snippet}</div>
+            </div>
+          `;
+        });
+        resultsHTML += '</div>';
+        contentDiv.innerHTML = resultsHTML;
+        document.title = `Search: ${searchTerm} - SimpleWiki`;
+      } else {
+        contentDiv.innerHTML = `
+          <div class="search-results">
+            <h2>Search Results for "${searchTerm}"</h2>
+            <p>No results found. Try different keywords or check the <a href="articles/Help.html">Help</a> section.</p>
+          </div>
+        `;
+        document.title = `Search: ${searchTerm} - SimpleWiki`;
+      }
+    }
+
+    // Allow search on pressing the Enter key
+    document.getElementById('searchInput').addEventListener('keyup', function(event) {
+      if (event.key === 'Enter') {
+        searchWiki();
+      }
+    });
+  </script>
+</body>
+</html>
