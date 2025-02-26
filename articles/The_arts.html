@@ -103,19 +103,6 @@ In essence, the dynamic interplay between art and politics underscores a dual ca
   </div>
 
   <script>
-    // When the page loads, pick a random article and redirect if not already on it.
-    document.addEventListener("DOMContentLoaded", function() {
-      // Define an array of relative file names for the articles.
-      const randomArticles = [
-        "The_arts.html"
-        // You can add more articles here.
-      ];
-      const randomArticle = randomArticles[Math.floor(Math.random() * randomArticles.length)];
-      // Redirect only if the current URL doesn't already end with the chosen article.
-      if (!window.location.pathname.endsWith(randomArticle)) {
-        window.location.href = randomArticle;
-      }
-    });
     
     // Optional search function: Redirects to index.html with a query (if implemented)
     function searchWiki() {
