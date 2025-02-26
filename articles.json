@@ -1,12 +1,17 @@
 {
    "Main_Page": {
        "title": "The Open Encyclopedia",
-       "file": "articles/Main_Page.html",
+       "file": "Main_Page.html",
        "snippet": "The Open Encyclopedia is a free online encyclopedia for public use."
    },
      "The arts": {
        "title": "The arts",
-       "file": "articles/The_arts.html",
+       "file": "The_arts.html",
        "snippet": "The creative arts encompass an extraordinary range of human practices that express ideas, emotions, and cultural values..."
+   },
+        "Earth": {
+       "title": "Earth",
+       "file": "Earth.html",
+       "snippet": "Earth is the third planet from the Sun and the only known celestial body that supports life..."
    }
 }
