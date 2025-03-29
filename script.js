@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- IMPORTANT: Manually list your article files here ---
     // The 'title' is for display, 'filename' is the actual .txt file name.
     const availableArticles = [
-        { title: "Introduction", filename: "introduction.txt" },
+        { title: "Country", filename: "country.txt" },
         { title: "HTML Basics", filename: "html_basics.txt" },
         { title: "CSS Styling", filename: "css_styling.txt" },
         { title: "JavaScript Events", filename: "javascript_events.txt" },
