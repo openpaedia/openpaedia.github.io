@@ -1,5 +1,0 @@
-Welcome to the Dynamic Wiki!
-
-This wiki demonstrates how to use HTML, CSS, and JavaScript to create a searchable knowledge base. Articles are stored as simple text files and loaded dynamically.
-
-Use the search bar above to find articles instantly, or click the 'All Articles' link to browse the complete list.
