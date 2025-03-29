@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // The 'title' is for display, 'filename' is the actual .txt file name.
     const availableArticles = [
         { title: "Country", filename: "country.txt" },
-        { title: "Land", filename: "land.txt" }
+        { title: "Land", filename: "land.txt" },
+        { title: "City", filename: "city.txt" }
         // Add more articles here as you create the .txt files
         // { title: "Another Article", filename: "another_article.txt" },
     ];
