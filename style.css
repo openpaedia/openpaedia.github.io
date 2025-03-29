@@ -12,6 +12,7 @@ body {
     color: #343a40; /* Dark grey text */
     display: flex;
     min-height: 100vh;
+    /* Removed flex display from body for simpler mobile layout */
 }
 
 a {
@@ -33,13 +34,13 @@ ul {
     display: flex;
     width: 100%;
     max-width: 1400px; /* Max width for larger screens */
-    margin: 0 auto; /* Center the container */
+    margin: 20px auto; /* Center the container with top/bottom margin */
     background-color: #ffffff; /* White background for content area */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     border-radius: 8px; /* Slightly rounded corners */
     overflow: hidden; /* Contain child elements */
-    margin-top: 20px; /* Space from top */
-    margin-bottom: 20px; /* Space from bottom */
+    /* Removed min-height from body and let container define structure */
+    min-height: calc(100vh - 40px); /* Adjust height based on body margin */
 }
 
 .sidebar {
@@ -58,6 +59,8 @@ ul {
     display: flex;
     flex-direction: column;
     overflow-y: auto; /* Allow content scrolling if needed */
+    /* Add max-width to prevent extremely wide lines on very large screens */
+    max-width: calc(100% - 220px); /* Adjust based on sidebar width */
 }
 
 /* --- Sidebar --- */
@@ -230,4 +233,134 @@ ul {
 /* --- Utility --- */
 .hidden {
     display: none;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    body {
+        /* Ensure body allows scrolling */
+        display: block;
+    }
+
+    .container {
+        flex-direction: column; /* Stack sidebar and content vertically */
+        margin: 0; /* Remove side margins */
+        max-width: 100%; /* Use full width */
+        border-radius: 0; /* Remove rounded corners for edge-to-edge */
+        box-shadow: none; /* Remove shadow on mobile */
+        min-height: 100vh; /* Ensure it fills the height */
+    }
+
+    .sidebar {
+        width: 100%; /* Sidebar takes full width */
+        padding: 15px; /* Reduce padding */
+        height: auto; /* Let height be determined by content */
+        /* Optional: Center items if desired */
+        /* text-align: center; */
+    }
+
+    .sidebar .logo {
+        font-size: 2em; /* Slightly smaller logo */
+        margin-bottom: 20px; /* Reduced margin */
+    }
+
+    .sidebar nav ul {
+        /* Optional: Center nav items */
+        /* display: flex; */
+        /* justify-content: center; */
+        /* flex-wrap: wrap; */ /* Allow wrapping if many items */
+        /* gap: 10px; */
+    }
+
+    .sidebar nav ul li {
+        margin-bottom: 10px; /* Adjust spacing */
+    }
+
+    .sidebar nav ul li a {
+        padding: 8px 10px; /* Adjust link padding */
+        font-size: 1em; /* Adjust font size */
+    }
+
+    .content {
+        padding: 20px 15px; /* Reduce padding */
+        overflow-y: visible; /* Allow page to scroll normally */
+        max-width: 100%; /* Ensure content uses full width */
+        flex-grow: 1; /* Ensure content area tries to fill remaining space */
+    }
+
+    .main-header {
+        margin-bottom: 20px; /* Adjust spacing */
+        padding-bottom: 15px;
+    }
+
+    .search-container {
+        max-width: 100%; /* Allow search bar to use full width */
+    }
+
+    #search-box {
+        padding: 10px 15px; /* Adjust padding */
+        font-size: 0.95em;
+    }
+
+    .search-results {
+        max-height: 250px; /* Adjust max height */
+        border-radius: 0 0 8px 8px;
+    }
+     .search-results div {
+         padding: 8px 15px; /* Adjust padding */
+     }
+
+    .article-view, .all-articles-view {
+        padding: 20px 15px; /* Adjust padding */
+        border-radius: 0; /* Remove radius if container is edge-to-edge */
+        box-shadow: none; /* Remove shadow if container is edge-to-edge */
+        /* Removed flex-grow as content itself handles height now */
+    }
+
+    .article-view h2, .all-articles-view h2 {
+        font-size: 1.6em; /* Reduce heading size */
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+    }
+
+    .article-view h3 {
+        font-size: 1.3em; /* Reduce subheading size */
+        margin-top: 20px;
+    }
+
+    .article-view p {
+        font-size: 1em; /* Ensure base readability */
+        line-height: 1.5;
+    }
+
+    .article-view pre {
+        padding: 10px;
+        font-size: 0.85em;
+    }
+
+    .article-view code {
+        font-size: 0.85em; /* Match preformatted code */
+    }
+
+    #all-articles-list li a {
+        font-size: 1em;
+        padding: 6px 0;
+    }
+}
+
+/* Optional: Media query for very small screens if needed */
+@media (max-width: 480px) {
+    .content {
+        padding: 15px 10px; /* Further reduce padding */
+    }
+
+    .article-view h2, .all-articles-view h2 {
+        font-size: 1.4em; /* Further reduce heading size */
+    }
+    .article-view h3 {
+        font-size: 1.2em; /* Further reduce subheading size */
+    }
+     .article-view p {
+        font-size: 0.95em;
+     }
 }
