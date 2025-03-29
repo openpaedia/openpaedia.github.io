@@ -1,0 +1,10 @@
+CSS: Cascading Style Sheets
+
+CSS is used to style and lay out web pages — for example, to alter the font, color, size, and spacing of your content, split it into multiple columns, or add animations and other decorative features.
+
+Selectors target HTML elements, and properties define their appearance. Example:
+
+p {
+  color: navy;
+  font-family: sans-serif;
+}

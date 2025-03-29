@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Open Encyclopedia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Navigation</h2>
+            <nav>
+                <ul>
+                    <li><a href="all_articles.html">All Articles</a></li>
+                    </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header>
+                <h1>The Open Encyclopedia</h1>
+                <div class="search-container">
+                    <input type="text" id="search-box" placeholder="Search articles (min 2 chars)...">
+                    <div id="search-results" class="search-results-box"></div>
+                </div>
+            </header>
+
+            <article id="article-content">
+                <h2>Welcome!</h2>
+                <p>Enter at least two characters in the search box above to find articles, or select one from the <a href="all_articles.html">full list</a>.</p>
+            </article>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
