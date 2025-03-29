@@ -1,9 +1,0 @@
-JavaScript: Making Web Pages Interactive
-
-JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else.
-
-In this wiki, JavaScript is used to:
-- Fetch the list of articles.
-- Handle user input in the search box.
-- Filter articles based on the search query.
-- Fetch and display the content of selected text files.
