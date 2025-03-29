@@ -2,4 +2,4 @@ Welcome to the Open Encyclopaedia—a free repository of knowledge dedicated to 
 
 At the heart of our platform lies the belief that information should be accessible to everyone, regardless of background or circumstance. Whether you are a seasoned researcher, an inquisitive student, or simply a lifelong learner, the Open Encyclopaedia offers a welcoming space where knowledge is continuously refined, expanded, and shared. Much reserch has been conducted in writing each article. Feel free to explore our encyclopedia!
 
-</b>Use the search bar above to find articles instantly, or click the 'All Articles' link to browse the complete list.<b>
+<b>Use the search bar above to find articles instantly, or click the 'All Articles' link to browse the complete list.</b>
